@@ -14,7 +14,6 @@ public class IndexController {
 
 	//we can inject: by attribute, by constructor and by method set 
 	@Autowired 
-	@Qualifier("myServiceComplex")
 	private IService service;
 	
 	@GetMapping({"/", "/index"})

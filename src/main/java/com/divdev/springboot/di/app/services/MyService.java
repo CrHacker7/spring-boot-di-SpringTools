@@ -4,8 +4,8 @@ import org.springframework.context.annotation.Primary;
 //import org.springframework.stereotype.Component; another option to DI
 import org.springframework.stereotype.Service;
 
-@Primary
-@Service("mySimpleService")
+//@Primary
+//@Service("myServiceSimple")
 public class MyService implements IService{
 
 	@Override
