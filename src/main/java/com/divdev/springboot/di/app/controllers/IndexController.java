@@ -12,15 +12,16 @@ public class IndexController {
 
 	private MyService service;
 	
+	@Autowired //we can omit this annotation, it is up to you to write it.
+	public IndexController(MyService service) {
+		this.service = service;
+	}
+
 	@GetMapping({"/", "/index"})
 	public String index(Model model) {
 		model.addAttribute("object", service.operation());
 		return "index";
 	}
-	
-	@Autowired
-	public void setService(MyService service) {
-		this.service = service;
-	}
+
 	
 }
