@@ -4,13 +4,13 @@ import org.springframework.context.annotation.Primary;
 //import org.springframework.stereotype.Component; another option to DI
 import org.springframework.stereotype.Service;
 
-@Primary
-@Service("mySimpleService")
-public class MyService implements IService{
+//@Primary
+@Service("myServiceComplex")
+public class MyServiceComplex implements IService{
 
 	@Override
 	public String operation() {
-		return "Executing an important SIMPLE process...";
+		return "Executing an important COMPLEX process...";
 	}
 	
 }
