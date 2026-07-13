@@ -10,13 +10,10 @@ import com.divdev.springboot.di.app.services.MyService;
 @Controller
 public class IndexController {
 
+	//we can inject: by attribute, by constructor and by method set 
+	@Autowired 
 	private MyService service;
 	
-	@Autowired //we can omit this annotation, it is up to you to write it.
-	public IndexController(MyService service) {
-		this.service = service;
-	}
-
 	@GetMapping({"/", "/index"})
 	public String index(Model model) {
 		model.addAttribute("object", service.operation());
