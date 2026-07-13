@@ -12,12 +12,12 @@ import com.divdev.springboot.di.app.services.MyServiceComplex;
 public class AppConfig {
 
 	@Bean("myServiceSimple")
+	@Primary
 	public IService registerMyService() {
 		return new MyService();
 	}
 	
 	@Bean("myServiceComplex")
-	@Primary
 	public IService registerMyServiceComplex() {
 		return new MyServiceComplex();
 	}
