@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+
 @Component
 public class Invoice {
 
@@ -17,6 +20,17 @@ public class Invoice {
 
 	@Autowired
 	private List<ItemInvoice> items;
+	
+	@PostConstruct
+	public void init() {
+		client.setName(client.getName().concat(" ").concat("Genious"));
+		description = description.concat(" for client: ").concat(client.getName());
+	}
+	
+	@PreDestroy
+	public void destroy() {
+		System.out.println("Invoice destroyed: ".concat(description));
+	}
 
 	public String getDescription() {
 		return description;
